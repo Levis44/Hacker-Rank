@@ -1,4 +1,4 @@
-const input = "12:45:54PM"; // 12:45:54
+const input = "12:45:54AM"; // 12:45:54
 
 function timeConversion(s) {
   const period = s.match(/AM|PM/g)[0];
@@ -7,8 +7,8 @@ function timeConversion(s) {
 
   let formattedHour;
 
-  if (hour === "12" && !isAfterMidDay) {
-    formattedHour = "00";
+  if (hour === "12") {
+    formattedHour = isAfterMidDay ? "12" : "00";
   } else {
     formattedHour = isAfterMidDay ? Number(hour) + 12 : hour;
   }
